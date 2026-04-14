@@ -1,3 +1,10 @@
+:root {
+  --card: #1a1a1a;
+  --accent: #00a2ff;
+  --bg: #111111;
+  --text: #ffffff;
+}
+
 .modal {
   position: fixed;
   top: 0;
