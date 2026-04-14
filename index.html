@@ -5,61 +5,87 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>n1otev</title>
 
+  <!-- IMPORTANT: relative path only -->
   <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
 
   <div class="container">
-    <h1>n1otev</h1>
-    <p class="subtitle">Roblox Scripter — systems, UI, optimization</p>
+    <header>
+      <h1>n1otev</h1>
+      <p class="subtitle">Roblox Scripter — systems, UI, optimization</p>
+    </header>
 
-    <h2>Projects</h2>
-    <div id="projects"></div>
+    <main>
+      <section>
+        <h2>Projects</h2>
+        <div id="projects"></div>
+      </section>
 
-    <div class="skills">
-      <h2>Skills</h2>
-      <div class="tags">
-        <div class="tag">Lua</div>
-        <div class="tag">Roblox API</div>
-        <div class="tag">UI Systems</div>
-        <div class="tag">Optimization</div>
-        <div class="tag">DataStores</div>
-      </div>
-    </div>
+      <section class="skills">
+        <h2>Skills</h2>
+        <div class="tags">
+          <span class="tag">Lua</span>
+          <span class="tag">Roblox API</span>
+          <span class="tag">UI Systems</span>
+          <span class="tag">Optimization</span>
+          <span class="tag">DataStores</span>
+        </div>
+      </section>
 
-    <div class="contact">
-      <h2>Contact</h2>
-      <p>
-        Discord: n1otev<br>
-        GitHub: <a href="https://github.com/drelchl" target="_blank">github.com/yourname</a>
-      </p>
-    </div>
+      <section class="contact">
+        <h2>Contact</h2>
+        <p>
+          Discord: <b>n1otev</b><br>
+          GitHub:
+          <a href="https://github.com/drelchl" target="_blank">
+            github.com/drelchl
+          </a>
+        </p>
+      </section>
+    </main>
 
     <footer>
       © 2026 n1otev
     </footer>
   </div>
 
+  <!-- JS (also safe relative path) -->
+  <script src="./script.js"></script>
+
+  <!-- PROJECT LOADER (safe + debug-proof) -->
   <script>
     async function loadProjects() {
-      const res = await fetch("projects.json");
-      const projects = await res.json();
+      try {
+        const res = await fetch("./projects.json");
 
-      const container = document.getElementById("projects");
+        if (!res.ok) {
+          throw new Error("projects.json not found");
+        }
 
-      projects.forEach(project => {
-        const div = document.createElement("div");
-        div.className = "project";
+        const projects = await res.json();
+        const container = document.getElementById("projects");
 
-        div.innerHTML = `
-          <h3>${project.title}</h3>
-          <p>${project.description}</p>
-        `;
+        projects.forEach(p => {
+          const div = document.createElement("div");
+          div.className = "project";
 
-        div.onclick = () => openModal(project);
+          div.innerHTML = `
+            <h3>${p.title}</h3>
+            <p>${p.description}</p>
+          `;
 
-        container.appendChild(div);
-      });
+          div.onclick = () => openModal(p);
+
+          container.appendChild(div);
+        });
+
+      } catch (err) {
+        console.error(err);
+        document.getElementById("projects").innerHTML =
+          "<p style='color:#ff4d4d;'>Failed to load projects.json</p>";
+      }
     }
 
     function openModal(project) {
@@ -70,21 +96,22 @@
         <div class="modal-content">
           <h2>${project.title}</h2>
           <p>${project.description}</p>
-          <video src="${project.video}" controls autoplay></video>
-          <button onclick="closeModal()">Close</button>
+
+          <video controls autoplay>
+            <source src="${project.video}" type="video/mp4">
+          </video>
+
+          <button onclick="document.querySelector('.modal').remove()">
+            Close
+          </button>
         </div>
       `;
 
       modal.onclick = (e) => {
-        if (e.target === modal) closeModal();
+        if (e.target === modal) modal.remove();
       };
 
       document.body.appendChild(modal);
-    }
-
-    function closeModal() {
-      const modal = document.querySelector(".modal");
-      if (modal) modal.remove();
     }
 
     loadProjects();
