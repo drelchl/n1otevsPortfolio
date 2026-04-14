@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>YourName</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>YourName</h1>
+    <p class="subtitle">Roblox Scripter — systems, UI, optimization</p>
+
+    <h2>Projects</h2>
+    <div id="projects"></div>
+
+    <div class="skills">
+      <h2>Skills</h2>
+      <div class="tags">
+        <div class="tag">Lua</div>
+        <div class="tag">Roblox API</div>
+        <div class="tag">UI Systems</div>
+        <div class="tag">Optimization</div>
+        <div class="tag">DataStores</div>
+      </div>
+    </div>
+
+    <div class="contact">
+      <h2>Contact</h2>
+      <p>
+        Discord: yourname<br>
+        GitHub: <a href="https://github.com/yourname" target="_blank">github.com/yourname</a>
+      </p>
+    </div>
+
+    <footer>
+      © 2026 YourName
+    </footer>
+  </div>
+
+  <script>
+    async function loadProjects() {
+      const res = await fetch("projects.json");
+      const projects = await res.json();
+
+      const container = document.getElementById("projects");
+
+      projects.forEach(project => {
+        const div = document.createElement("div");
+        div.className = "project";
+
+        div.innerHTML = `
+          <h3>${project.title}</h3>
+          <p>${project.description}</p>
+        `;
+
+        div.onclick = () => openModal(project);
+
+        container.appendChild(div);
+      });
+    }
+
+    function openModal(project) {
+      const modal = document.createElement("div");
+      modal.className = "modal";
+
+      modal.innerHTML = `
+        <div class="modal-content">
+          <h2>${project.title}</h2>
+          <p>${project.description}</p>
+          <video src="${project.video}" controls autoplay></video>
+          <button onclick="closeModal()">Close</button>
+        </div>
+      `;
+
+      modal.onclick = (e) => {
+        if (e.target === modal) closeModal();
+      };
+
+      document.body.appendChild(modal);
+    }
+
+    function closeModal() {
+      const modal = document.querySelector(".modal");
+      if (modal) modal.remove();
+    }
+
+    loadProjects();
+  </script>
+
+</body>
+</html>
