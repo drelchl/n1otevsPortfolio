@@ -9,12 +9,60 @@
         /* Small fix for the Gallery Button inside the card */
         summary.btn::-webkit-details-marker { display: none; }
         summary.btn { list-style: none; cursor: pointer; }
+
+        /* Skills Section Styling */
+        .skill-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .skill-card {
+            background: #252525;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid #333;
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            border-color: #00a2ff;
+            transform: translateY(-5px);
+        }
+
+        .skill-card i {
+            font-size: 2rem;
+            color: #00a2ff;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .skill-card h4 {
+            margin: 10px 0;
+            font-size: 1.1rem;
+        }
+
+        .skill-bar-bg {
+            background: #111;
+            height: 6px;
+            border-radius: 3px;
+            margin-top: 10px;
+            overflow: hidden;
+        }
+
+        .skill-bar-fill {
+            background: #00a2ff;
+            height: 100%;
+        }
     </style>
 </head>
 <body>
 
     <nav>
         <a href="#about">About</a>
+        <a href="#skills">Skills</a>
         <a href="#work">My Work</a>
         <a href="#contact">Contact</a>
     </nav>
@@ -27,6 +75,43 @@
     <div class="container" id="about">
         <h2>About Me</h2>
         <p>My nickname is <strong>n1otev</strong>. I have been developing on the Roblox platform for ~4.5 years. I specialize in <strong>Luau Scripting</strong> and systems architecture. My goal is to create immersive, high-performance systems that developers love to use.</p>
+    </div>
+
+    <div class="container" id="skills">
+        <h2>Technical Skills</h2>
+        <div class="skill-grid">
+            
+            <div class="skill-card">
+                <h4>Luau Scripting</h4>
+                <p style="font-size: 0.8rem; color: #bbb;">OOP, modules, custom systems</p>
+                <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 90%;"></div></div>
+            </div>
+
+            <div class="skill-card">
+                <h4>Data Management</h4>
+                <p style="font-size: 0.8rem; color: #bbb;">Player data, saving systems</p>
+                <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 85%;"></div></div>
+            </div>
+            
+            <div class="skill-card">
+                <h4>UI Development</h4>
+                <p style="font-size: 0.8rem; color: #bbb;">Dynamic UI, reusable components</p>
+                <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 83%;"></div></div>
+            </div>
+            
+            <div class="skill-card">
+                <h4>Game Systems</h4>
+                <p style="font-size: 0.8rem; color: #bbb;">Input systems, modular design</p>
+                <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 88%;"></div></div>
+            </div>
+            
+            <div class="skill-card">
+                <h4>Math & Mechanics</h4>
+                <p style="font-size: 0.8rem; color: #bbb;">Raycasting, movement logic</p>
+                <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 80%;"></div></div>
+            </div>
+
+        </div>
     </div>
 
     <div class="container" id="work">
