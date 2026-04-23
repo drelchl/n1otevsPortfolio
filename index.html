@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>n1otev | Roblox Developer Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Small fix for the Gallery Button inside the card */
+        summary.btn::-webkit-details-marker { display: none; }
+        summary.btn { list-style: none; cursor: pointer; }
+    </style>
 </head>
 <body>
 
@@ -32,7 +37,7 @@
                 <img src="Videos/AP3XLogo.png" alt="AP3X Framework Logo">
                 <div class="card-content">
                     <h3>AP3X Framework v3.0</h3>
-                    <p>AP3X is an enterprise-grade input management solution for Roblox, engineered to bridge the gap between raw user interaction and high-performance gameplay logic. Built with a focus on modularity and architectural cleanliness, it facilitates a "plug-and-play" workflow for complex mechanics.</p>
+                    <p>AP3X is an enterprise-grade input management solution for Roblox, engineered to bridge the gap between raw user interaction and high-performance gameplay logic.</p>
                     
                     <ul style="font-size: 0.85rem; color: #b3b3b3; padding-left: 20px; margin-bottom: 15px;">
                         <li>Contextual Mapping & State Switching</li>
@@ -41,26 +46,40 @@
                         <li>Priority-Based Action Execution</li>
                     </ul>
 
-                    <details style="margin-top: 15px; cursor: pointer;">
-                        <summary style="color: #00a2ff; font-weight: bold;">View Technical API Snippet</summary>
+                    <details>
+                        <summary style="color: #00a2ff; font-weight: bold; cursor: pointer;">View Technical API Snippet</summary>
                         <pre style="background: #111; padding: 12px; border-radius: 5px; overflow-x: auto; text-align: left; border: 1px solid #333; margin-top: 10px;">
 <code style="color: #dcdcdc; font-family: 'Courier New', monospace; font-size: 0.8rem;">
--- Type-Safe Action Configuration
 export type ActionConfig = {
     AllowMultiple: boolean?,
     Exclusive: boolean?,    
     Priority: number?,      
-    Context: string?,
-    Cooldown: number?,
-    Middleware: { () -> boolean }?
-}
+    Context: string?
+}</code></pre>
+                    </details>
+                </div>
+            </div>
 
--- Usage Example
-AP3X:Set(Enum.KeyCode.Q, DashModule, {
-    Priority = 10,
-    Cooldown = 2,
-    Context = "Combat"
-})</code></pre>
+            <div class="card">
+                <img src="Videos/PetSystemMain.png" alt="Pet System Preview">
+                <div class="card-content">
+                    <h3>Server-Authoritative Pet Kit</h3>
+                    <p>A modular pet game kit designed for secure, server-side progression. It features a clean separation between backend logic and responsive client-side presentation.</p>
+                    
+                    <ul style="font-size: 0.85rem; color: #b3b3b3; padding-left: 20px; margin-bottom: 15px;">
+                        <li>Secure Egg-based RNG Hatching</li>
+                        <li>ProfileService Data Persistence</li>
+                        <li>Multi-layered Stat Boost Calculations</li>
+                        <li>Inventory Management (Crafting/Equipping)</li>
+                    </ul>
+
+                    <details>
+                        <summary class="btn">View Gallery</summary>
+                        <div style="display: grid; grid-template-columns: 1fr; gap: 10px; margin-top: 15px;">
+                            <img src="Videos/PetImage1.png" style="width: 100%; border-radius: 4px; border: 1px solid #444;" alt="Pet Gallery 1">
+                            <img src="Videos/PetImage2.png" style="width: 100%; border-radius: 4px; border: 1px solid #444;" alt="Pet Gallery 2">
+                            <img src="Videos/PetImage3.png" style="width: 100%; border-radius: 4px; border: 1px solid #444;" alt="Pet Gallery 3">
+                        </div>
                     </details>
                 </div>
             </div>
@@ -69,27 +88,26 @@ AP3X:Set(Enum.KeyCode.Q, DashModule, {
                 <img src="Videos/DialogueSystem.png" alt="Dialogue System Preview">
                 <div class="card-content">
                     <h3>Advanced Modular Dialogue System</h3>
-                    <p>A powerful, data-driven dialogue solution featuring branching flow control and a robust hook system for triggering custom gameplay logic (shops, quests, teleports).</p>
+                    <p>A powerful, data-driven dialogue solution featuring branching flow control and a robust hook system for triggering custom gameplay logic.</p>
                     
                     <ul style="font-size: 0.85rem; color: #b3b3b3; padding-left: 20px; margin-bottom: 15px;">
-                        <li>Built-in UI with Live NPC Viewport Preview</li>
-                        <li>Multiple Typing Modes (Letter, Word, Fade)</li>
-                        <li>Dynamic Placeholders & ID-based Flow</li>
-                        <li>Configurable Per-response Hooks</li>
+                        <li>Live NPC Viewport Previews</li>
+                        <li>Branching ID-based Flow Control</li>
+                        <li>Custom Hook System (Shops/Quests)</li>
+                        <li>Dynamic {PLACEHOLDERS} Support</li>
                     </ul>
 
-                    <a href="https://www.roblox.com/games/126116382670847/n1otevs-Dialog-System-DEMO-PLACE" class="btn" target="_blank">Play Demo Place</a>
+                    <a href="https://www.roblox.com/games/126116382670847/n1otevs-Dialog-System-DEMO-PLACE" class="btn" target="_blank">Play Demo</a>
                 </div>
             </div>
 
             <div class="card">
                 <video width="100%" height="200" style="object-fit: cover; display: block;" autoplay loop muted playsinline>
                     <source src="Videos/AEWS.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
                 </video>
                 <div class="card-content">
                     <h3>Advanced Emote Wheel System</h3>
-                    <p>A customizable and optimized emotes system for Roblox that lets players use animations with synced music through a simple interface. It supports multiple emotes, configurable movement, and full mobile compatibility. Structured for easy modification and expansion.</p>
+                    <p>A customizable and optimized emotes system featuring synced music, mobile compatibility, and a sleek circular UI. Built for easy modification.</p>
                 </div>
             </div>
 
