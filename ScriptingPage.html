@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>n1otev | Scripting & Systems Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Systems-focused styling */
+        .code-header {
+            background: #1a1a1a;
+            border-left: 4px solid #00a2ff;
+            padding: 15px;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            color: #dcdcdc;
+        }
+
+        .system-tag {
+            background: #333;
+            color: #00a2ff;
+            font-size: 0.7rem;
+            padding: 2px 8px;
+            border-radius: 3px;
+            margin-right: 5px;
+            border: 1px solid #444;
+            text-transform: uppercase;
+        }
+
+        pre {
+            background: #0d0d0d;
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+            border: 1px solid #222;
+            margin: 10px 0;
+        }
+
+        code {
+            color: #75beff;
+            font-family: 'Consolas', monospace;
+        }
+
+        .perf-metric {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            color: #888;
+            border-top: 1px solid #333;
+            padding-top: 10px;
+            margin-top: 10px;
+        }
+
+        .card-content ul {
+            font-size: 0.85rem; 
+            color: #b3b3b3; 
+            padding-left: 20px; 
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Main Hub</a>
+        <a href="#frameworks">Frameworks</a>
+        <a href="#gameplay">Gameplay Systems</a>
+        <a href="#backend">Backend/Data</a>
+    </nav>
+
+    <header>
+        <h1>Luau Systems Architect</h1>
+        <p>Specializing in OOP, scalable frameworks, and high-performance game logic.</p>
+    </header>
+
+    <div class="container" id="frameworks">
+        <h2>Architecture & Frameworks</h2>
+        <p>I build modular codebases designed for long-term project maintenance and extreme performance.</p>
+        
+        <div class="grid">
+            <div class="card">
+                <div class="card-content">
+                    <span class="system-tag">Luau</span><span class="system-tag">OOP</span>
+                    <h3>AP3X Framework v3.0</h3>
+                    <p>AP3X is an enterprise-grade input management solution for Roblox, engineered to bridge the gap between raw user interaction and high-performance gameplay logic.</p>
+                    
+                    <ul>
+                        <li>Contextual Mapping & State Switching</li>
+                        <li>Advanced Input Buffering (Anti-Spam)</li>
+                        <li>Middleware Pre-processing Stack</li>
+                        <li>Priority-Based Action Execution</li>
+                    </ul>
+
+                    <pre><code>-- Priority-based execution logic
+function Action:Execute(inputObject)
+    if self.Priority < CurrentQueue.Min then 
+        return "Buffered" 
+    end
+    return self.Callback(inputObject)
+end</code></pre>
+
+                    <div class="perf-metric">
+                        <span>Latency: ~0.02ms</span>
+                        <span>Memory: Minimal</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-content">
+                    <span class="system-tag">Modular</span><span class="system-tag">Event-Driven</span>
+                    <h3>Custom Signal Class</h3>
+                    <p>A high-speed alternative to Roblox BindableEvents, optimized for thousands of connections without the overhead of instance creation.</p>
+                    <ul>
+                        <li>Memory-efficient connection handling</li>
+                        <li>Fast execution via task.spawn</li>
+                        <li>Zero-instance overhead</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="gameplay">
+        <h2>Gameplay Systems</h2>
+        <div class="grid">
+            <div class="card">
+                <img src="Videos/PetSystemMain.png" alt="Pet System Preview">
+                <div class="card-content">
+                    <span class="system-tag">Gameplay Logic</span>
+                    <h3>Modular Pet System</h3>
+                    <p>A modular pet game kit designed for secure, server-side progression. It features a clean separation between backend logic and responsive client-side presentation.</p>
+                    
+                    <ul>
+                        <li>Secure Egg-based RNG Hatching</li>
+                        <li>Multi-layered Stat Boost Calculations</li>
+                        <li>Inventory Management (Crafting/Equipping)</li>
+                        <li>Server-Authoritative Action Validation</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="Videos/DialogueSystem.png" alt="System Logic">
+                <div class="card-content">
+                    <span class="system-tag">Data-Driven</span>
+                    <h3>Advanced Dialogue System</h3>
+                    <p>A powerful, data-driven dialogue solution featuring branching flow control and a robust hook system for triggering custom gameplay logic.</p>
+                    
+                    <ul>
+                        <li>Branching ID-based Flow Control</li>
+                        <li>Custom Hook System (Shops/Quests)</li>
+                        <li>Dynamic {PLACEHOLDERS} Support</li>
+                        <li>Live NPC Viewport Previews</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <video width="100%" height="180" style="object-fit: cover; display: block;" autoplay loop muted playsinline>
+                    <source src="Videos/AEWS.mp4" type="video/mp4">
+                </video>
+                <div class="card-content">
+                    <span class="system-tag">Sync Logic</span>
+                    <h3>Advanced Emote Wheel System</h3>
+                    <p>A customizable and optimized emotes system featuring synced music, mobile compatibility, and a sleek circular UI. Built for easy modification.</p>
+                    <ul>
+                        <li>Cross-Server Music Syncing</li>
+                        <li>Radial Interaction Logic</li>
+                        <li>Modular Emote Data Tables</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="backend">
+        <h2>Data Management</h2>
+        <div class="card" style="width: 100%; max-width: 100%;">
+            <div class="card-content">
+                <span class="system-tag">Persistence</span>
+                <h3>ProfileService Implementation</h3>
+                <p>I utilize <strong>ProfileService</strong> for robust player data management, ensuring 100% protection against data loss and duplication glitches.</p>
+                
+                <ul style="color: #bbb; font-size: 0.9rem; margin-top: 15px;">
+                    <li><strong>Session Locking:</strong> Prevents multi-server data corruption if a player hops servers too fast.</li>
+                    <li><strong>Auto-Reconciliation:</strong> Updates old player data structures to new versions automatically without wipes.</li>
+                    <li><strong>State Handling:</strong> Real-time replication of player stats to the UI using a centralized controller.</li>
+                    <li><strong>Global Data:</strong> Support for cross-server leaderboards and global marketplace data.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <footer id="contact">
+        <h2>Technical Inquiry</h2>
+        <div class="contact-info">
+            <p>Need a robust backend or custom framework?</p>
+            <p>Discord: <strong>n1otev</strong></p>
+            <p>&copy; 2026 n1otev | Systems Engineer</p>
+        </div>
+    </footer>
+
+</body>
+</html>
