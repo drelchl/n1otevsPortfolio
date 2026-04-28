@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>n1otev | UI/UX Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* UI Portfolio Specific Styling */
+        summary.btn::-webkit-details-marker { display: none; }
+        summary.btn { list-style: none; cursor: pointer; text-align: center; }
+
+        .ui-category-tag {
+            display: inline-block;
+            background: rgba(0, 162, 255, 0.1);
+            color: #00a2ff;
+            padding: 4px 10px;
+            border-radius: 5px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .gallery-grid {
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 10px; 
+            margin-top: 15px;
+        }
+
+        .gallery-grid img {
+            width: 100%; 
+            aspect-ratio: 16/9;
+            object-fit: cover;
+            border-radius: 6px; 
+            border: 1px solid #333;
+            transition: 0.3s;
+        }
+
+        .gallery-grid img:hover {
+            border-color: #00a2ff;
+        }
+
+        .full-width-img {
+            width: 100%;
+            border-radius: 8px;
+            border: 1px solid #333;
+            margin-bottom: 15px;
+        }
+
+        /* Responsive tweak for the gallery */
+        @media (max-width: 600px) {
+            .gallery-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Back to Main</a>
+        <a href="#branding">Branding</a>
+        <a href="#game-ui">Game UI</a>
+        <a href="#hud">HUD Systems</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <header>
+        <h1>UI & Visual Design</h1>
+        <p>Creating intuitive, pixel-perfect interfaces for the Roblox platform</p>
+    </header>
+
+    <div class="container" id="branding">
+        <h2>Visual Identity</h2>
+        <p>Consistent branding is the core of any successful project. I focus on high-readability typography and cohesive color palettes that match the game's atmosphere.</p>
+        
+        <div class="grid">
+            <div class="card">
+                <img src="Videos/AP3XLogo.png" alt="Branding Concept">
+                <div class="card-content">
+                    <span class="ui-category-tag">Logo Design</span>
+                    <h3>AP3X Identity</h3>
+                    <p>A minimalist, tech-focused brand identity designed for high-performance frameworks. Focuses on sharp angles and a cyan-centric palette.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="Videos/PetSystemMain.png" alt="Iconography">
+                <div class="card-content">
+                    <span class="ui-category-tag">Iconography</span>
+                    <h3>Vector Asset Creation</h3>
+                    <p>Custom-made vector icons designed in Figma to ensure infinite scalability and crisp rendering on all Roblox screen resolutions.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="game-ui">
+        <h2>Full Game Interfaces</h2>
+        <div class="grid">
+
+        <div class="container" id="hud">
+            <h2>HUD & UX Design</h2>
+            <div class="card" style="width: 100%; max-width: 100%;">
+                <div class="card-content">
+                    <span class="ui-category-tag">HUD System</span>
+                    <h3>Minimalist Survival HUD</h3>
+                    <p>Designed to be non-intrusive while providing critical player data. Uses custom shaders and progress bars for a modern look.</p>
+                    <div class="gallery-grid">
+                        <img src="Videos/DialogueSystem.png" alt="HUD Overview">
+                        <img src="Videos/AEWS.png" alt="HUD Details"> </div>
+                </div>
+            </div>
+        </div>
+
+    <footer id="contact">
+        <h2>Start a Project</h2>
+        <div class="contact-info">
+            <p>Ready to elevate your game's visuals? Reach out via Discord.</p>
+            <p>Discord: <strong>n1otev</strong></p>
+            <p>&copy; 2026 n1otev | UI/UX Designer</p>
+        </div>
+    </footer>
+
+</body>
+</html>
